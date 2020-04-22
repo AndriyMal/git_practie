@@ -198,6 +198,8 @@ cl=color_count('red')
 
 colors = ['red','yellow','green','white','black','blue','purple']
 
+lst = []
 for i in colors:
   colour = color_count(i)
-  print('Thread Shed sold '+ str(colour)+' threads of '+i+' thread today.')
+  lst.append(['Thread Shed sold '+ str(colour)+' threads of '+i+' thread today.'])
+print(lst)
