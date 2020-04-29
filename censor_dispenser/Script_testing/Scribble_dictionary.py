@@ -38,7 +38,7 @@ def update_point_totals(word):
       player_points+= score_word(word)
     player_to_points[player] = player_points
   return player_to_points
-#print(update_point_totals('Lexi'))
+print(update_point_totals('Lexi'))
 
 def play_word(player,word):
   player_to_words[player].append(word) 
