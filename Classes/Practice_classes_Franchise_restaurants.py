@@ -1,4 +1,3 @@
-Practice_classes_Franchise_restaurants.py
 
 class Menu:
   def __init__(self,name,items,start_time,end_time):
@@ -42,7 +41,7 @@ items_kids = {'chicken nuggets': 6.50, 'fusilli with wild mushrooms': 12.00, 'ap
 
 kids = Menu('kids',items_kids,11, 21)
 
-menus = [brunch, early_bird, dinner, kids,arepas_menu]
+menus = [brunch, early_bird, dinner, kids]
 
   
 class Franchise:
@@ -65,7 +64,7 @@ flagship_store = Franchise("1232 West End Road",menus)
 
 new_installment =  Franchise("12 East Mulberry Street", menus)
 franchises = [flagship_store,new_installment]
-#print(new_installment.available_menus(17))
+print(new_installment.available_menus(17))
 
 
 class Business:
