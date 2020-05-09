@@ -45,17 +45,29 @@ class Pokemon:
 
     
     def experience(self, count):
+        if count < 3:
+            return self.level
         if count >=3 and count <= 5:
             self.level += 2
             return self.level
-        elif count >5 and count <= 7:
+        elif count >5 and count <= 9:
             self.level += 3
             return self.level
-        elif count > 10:
+        elif count > 9 and count <=14:
             self.level += 5
             return self.level
         else:
+            self.level +=7
             return self.level
+    def evolve(self,evolve,count):
+        self.evolve = evolve
+        if count >= 8:
+            self.__class__ = Charmander
+            print(self.name + ' has been successfully upgraded to Charmander pokemon')
+            return self.evolve
+        else:
+            print('Not yet ready to evolve')
+
 
     def attack(self, other_pokemon):
         self.other_pokemon = Pokemon
@@ -238,6 +250,7 @@ class Charmander(Pokemon):
             if self.set_block == True:
                 self.set_block = True
 
+
 #creating charmanders
 aa = Charmander('Iverson',12,100,100,"Fire")
 aa.block_attack(True)
@@ -264,7 +277,11 @@ trainer_three = Trainer([g,h,j],5,'Be like Mike',1)
 b.attack(aa) 
 print(aa.health)
 
-
+#scenario evolve from Pokemon to Charmander
+c.evolve(c,5)
+c.block_attack(True)
+b.attack(c)
+print(c.health)
 #knockou method
 #c.knock_out(a)
 #c.knock_out(b)
