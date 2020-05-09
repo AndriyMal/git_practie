@@ -1,5 +1,5 @@
 class Pokemon:
-    def __init__(self,name,level,health,max_health,types,is_knocked_out=None):
+    def __init__(self, name, level, health, max_health, types, is_knocked_out=None):
         self.name = name
         self.level = level
         self.health = health
@@ -71,47 +71,77 @@ class Pokemon:
                         self.count +=1
                         count = self.count
                         self.level = self.experience(count)
-                        damage = 2 * self.level
-                        print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his healh')
-                        return other_pokemon.lose_health(damage)
+                        if other_pokemon.set_block == True:
+                            damage = 0.5* self.level *0.1
+                            print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
+                            return other_pokemon.lose_health(damage)
+                        else:    
+                            damage = 0.5 * self.level
+                            print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
+                            return other_pokemon.lose_health(damage)
                     if other_pokemon.type == "Water":
                         self.count +=1
                         count = self.count
                         self.level = self.experience(count)
-                        damage = 0.5* self.level
-                        print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his healh')
-                        return other_pokemon.lose_health(damage)
+                        if other_pokemon.set_block == True:
+                            damage = 0.5* self.level *0.1
+                            print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
+                            return other_pokemon.lose_health(damage)
+                        else:    
+                            damage = 0.5 * self.level
+                            print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
+                            return other_pokemon.lose_health(damage)
                     if other_pokemon.type == "Fire":
                         self.count +=1
                         count = self.count
                         self.level = self.experience(count)
-                        damage = 0.5 * self.level
-                        print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his healh')
-                        return other_pokemon.lose_health(damage)
-
+                        if other_pokemon.set_block == True:
+                            damage = 0.5* self.level *0.1
+                            print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
+                            return other_pokemon.lose_health(damage)
+                        else:    
+                            damage = 0.5 * self.level
+                            print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
+                            return other_pokemon.lose_health(damage)
                 if self.type == 'Grass':
                     
                     if other_pokemon.type == "Fire":
                         self.count +=1
                         count = self.count
                         self.level = self.experience(count)
-                        damage = 0.5 * self.level
-                        print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his healh')
-                        return other_pokemon.lose_health(damage)
+                        if other_pokemon.set_block == True:
+                            damage = 0.5* self.level *0.1
+                            print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his healh')
+                            return other_pokemon.lose_health(damage)
+                        else:    
+                            damage = 0.5 * self.level
+                            print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his healh')
+                            return other_pokemon.lose_health(damage)
+                    
                     if other_pokemon.type == "Water":
                         self.count +=1
                         count = self.count
                         self.level = self.experience(count)
-                        damage = 2* self.level
-                        print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his healh')
-                        return other_pokemon.lose_health(damage)
+                        if other_pokemon.set_block == True:
+                            damage = 0.5* self.level *0.1
+                            print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
+                            return other_pokemon.lose_health(damage)
+                        else:    
+                            damage = 0.5 * self.level
+                            print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
+                            return other_pokemon.lose_health(damage)
                     if other_pokemon.type == "Grass":
                         self.count +=1
                         count = self.count
                         self.level = self.experience(count)
-                        damage = 0.5 * self.level
-                        print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his healh')
-                        return other_pokemon.lose_health(damage)
+                        if other_pokemon.set_block == True:
+                            damage = 0.5* self.level *0.1
+                            print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
+                            return other_pokemon.lose_health(damage)
+                        else:    
+                            damage = 0.5 * self.level
+                            print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
+                            return other_pokemon.lose_health(damage)
 
                 
                 if self.type == 'Water':
@@ -120,23 +150,38 @@ class Pokemon:
                         self.count +=1
                         count = self.count
                         self.level = self.experience(count)
-                        damage = 2 * self.level
-                        print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his healh')                        
-                        return other_pokemon.lose_health(damage)
+                        if other_pokemon.set_block == True:
+                            damage = 0.5* self.level *0.1
+                            print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
+                            return other_pokemon.lose_health(damage)
+                        else:    
+                            damage = 0.5 * self.level
+                            print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
+                            return other_pokemon.lose_health(damage)
                     if other_pokemon.type == "Grass":
                         self.count +=1
                         count = self.count
                         self.level = self.experience(count)
-                        damage = 0.5* self.level
-                        print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his healh')
-                        return other_pokemon.lose_health(damage)
+                        if other_pokemon.set_block == True:
+                            damage = 0.5* self.level *0.1
+                            print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
+                            return other_pokemon.lose_health(damage)
+                        else:    
+                            damage = 0.5 * self.level
+                            print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
+                            return other_pokemon.lose_health(damage)
                     if other_pokemon.type == "Water":
                         self.count +=1
                         count = self.count
                         self.level = self.experience(count)
-                        damage = 0.5 * self.level
-                        print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his healh')
-                        return other_pokemon.lose_health(damage)
+                        if other_pokemon.set_block == True:
+                            damage = 0.5* self.level *0.1
+                            print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
+                            return other_pokemon.lose_health(damage)
+                        else:    
+                            damage = 0.5 * self.level
+                            print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
+                            return other_pokemon.lose_health(damage) 
        
 
 
@@ -181,14 +226,27 @@ class Trainer:
                 return self.my_active_pokemon
         except IndexError:
             print("You've selected a Pokemon that doesn't exist")
-       
-       
-            
 
 
+class Charmander(Pokemon):
+    def __init__(self,name,level,health,max_health,types,is_knocked_out=None,set_block=None):
+        super().__init__(name,level,health,max_health,types,is_knocked_out=None)
+        self.set_block = set_block
+
+    def block_attack(self,set_block):
+            self.set_block = set_block
+            if self.set_block == True:
+                self.set_block = True
+
+#creating charmanders
+aa = Charmander('Iverson',12,100,100,"Fire")
+aa.block_attack(True)
+                   
+
+#creating pokemons & trainers
 a = Pokemon('Mario',10, 80, 100,'Fire')
 b = Pokemon('Sergio',8, 90, 100,'Grass')
-c = Pokemon('Maorino',9, 90, 100,'Water')
+c = Pokemon('Maorino',9, 90, 100,'Water') 
 trainer_one = Trainer([a,b,c],3,"Alex",0)
 
 d = Pokemon('Rodman',10, 80, 100,'Fire')
@@ -201,6 +259,12 @@ h = Pokemon('MJ',12,95,100,'Grass')
 j = Pokemon('AI',10,80,100,'Water')
 trainer_three = Trainer([g,h,j],5,'Be like Mike',1) 
 
+
+##scenario pokemon b attacks Charmander aa with block turned on
+b.attack(aa) 
+print(aa.health)
+
+
 #knockou method
 #c.knock_out(a)
 #c.knock_out(b)
@@ -212,14 +276,14 @@ trainer_three = Trainer([g,h,j],5,'Be like Mike',1)
 
 #attack method
 
-c.attack(a)
-c.attack(b)
-c.attack(c)
-c.attack(d)
-c.attack(g)
-c.attack(h)
-c.attack(j)
-print(c.level)
+#c.attack(a)
+#c.attack(b)
+#c.attack(c)
+#c.attack(d)
+#c.attack(g)
+#c.attack(h)
+#c.attack(j)
+#print(c.level)
 
 
 #print(d.is_knocked_out,a.is_knocked_out)
