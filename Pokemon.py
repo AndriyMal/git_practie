@@ -7,6 +7,10 @@ class Pokemon:
         self.type = types
         self.is_knocked_out = is_knocked_out
         self.count = 0
+    
+    def __repr__(self):
+        # Printing a pokemon will tell you its name, its type, its level and how much health it has remaining
+        return "This level {level} {name} has {health} hit points remaining. They are a {type} type Pokemon".format(level = self.level, name = self.name, health=self.health, type = self.type)
 
     def lose_health(self, health_lost):
         self.health_lost = health_lost
@@ -59,15 +63,31 @@ class Pokemon:
         else:
             self.level +=7
             return self.level
+
     def evolve(self,evolve,count):
         self.evolve = evolve
-        if count >= 8:
+        if count >= 5 and count <= 7:
+            self.__class__ = Squirtle
+            #self.name = Squirtle()
+            #self.type = Squirtle.type
+            #self.level = Squirtle.level
+            #self.health = Squirtle.health
+            #self.max_health = Squirtle.max_health
+            print(self.name + ' has been successfully upgraded to Squirtle pokemon')
+            return self.evolve 
+        
+        if count >= 8 and count <= 10:
             self.__class__ = Charmander
             print(self.name + ' has been successfully upgraded to Charmander pokemon')
             return self.evolve
-        else:
+     
+        if count > 10: 
+            self.__class__ = Bulbasaur
+            print(self.name + ' has been successfully upgraded to Bulbasaur pokemon')
+            return self.evolve
+        else: 
             print('Not yet ready to evolve')
-
+            return self.evolve
 
     def attack(self, other_pokemon):
         self.other_pokemon = Pokemon
@@ -88,7 +108,7 @@ class Pokemon:
                             print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
                             return other_pokemon.lose_health(damage)
                         else:    
-                            damage = 0.5 * self.level
+                            damage = 2 * self.level
                             print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
                             return other_pokemon.lose_health(damage)
                     if other_pokemon.type == "Water":
@@ -139,7 +159,7 @@ class Pokemon:
                             print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
                             return other_pokemon.lose_health(damage)
                         else:    
-                            damage = 0.5 * self.level
+                            damage = 2 * self.level
                             print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
                             return other_pokemon.lose_health(damage)
                     if other_pokemon.type == "Grass":
@@ -167,7 +187,7 @@ class Pokemon:
                             print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
                             return other_pokemon.lose_health(damage)
                         else:    
-                            damage = 0.5 * self.level
+                            damage = 2 * self.level
                             print(self.name + ' attacked the '+ other_pokemon.name +' and has taken ' +str(damage) + ' from his fucking healh')
                             return other_pokemon.lose_health(damage)
                     if other_pokemon.type == "Grass":
@@ -249,10 +269,21 @@ class Charmander(Pokemon):
             self.set_block = set_block
             if self.set_block == True:
                 self.set_block = True
+                
+class Squirtle(Pokemon):
+    def __init__(self, name, level=20):
+        #lst = ['Squirtle',level,100,100,'Fire']
+        #i for i in range(len(lst))
+        super().__init__('Squirtle',level,100,100,'Fire')
+
+class Bulbasaur(Pokemon):
+    def __init__(self, level=25):
+        super().__init__('Bulbasaur',level,100,100,'Grass')
 
 
 #creating charmanders
-aa = Charmander('Iverson',12,100,100,"Fire")
+
+aa = Charmander('Iverson',15,100,100,'Water')
 aa.block_attack(True)
                    
 
@@ -274,14 +305,14 @@ trainer_three = Trainer([g,h,j],5,'Be like Mike',1)
 
 
 ##scenario pokemon b attacks Charmander aa with block turned on
-b.attack(aa) 
-print(aa.health)
+#b.attack(aa) 
+#print(aa.health)
 
 #scenario evolve from Pokemon to Charmander
-c.evolve(c,5)
-c.block_attack(True)
-b.attack(c)
-print(c.health)
+c.evolve(c,6)
+print(type(c))
+#b.attack(c)
+#print(c.health)
 #knockou method
 #c.knock_out(a)
 #c.knock_out(b)
